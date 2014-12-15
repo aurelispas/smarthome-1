@@ -13,7 +13,26 @@
 
   <body>
 
-    <%= yield %>
+        <div class="contain-to-grid">
+          <nav class="top-bar">
+            <ul class="title-area">
+              <h1><a href="">Arduino Smart Home</a></h1>
+            </ul>
+            <section class="top-bar-section">
+              <ul class="right">
+                <li class="divider"></li>
+                <li><a href="">Oturum Aç</a></li>
+                <li class="divider"></li>
+              </ul>
+            </section>
+          </nav>
+        </div>
+        <div class="row">
+          <%= yield %>
+        </div>
+
+
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
