@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   get '/:id', to: 'users#show',as: :profile
   get '/users/new',to: redirect('/kaydol')
   resources :users,except: :index
