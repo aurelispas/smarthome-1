@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-
+  get '/kaydol',to: 'users#new',as: :register
   resource :session,only: [:new,:create,:destroy]
   get '/oturum_ac',to:'sessions#new',as: :login
-  get 'oturum_kapat',to:'sessions#destroy',as: :logout
+  delete 'oturum_kapat',to:'sessions#destroy',as: :logout
   get '/:id', to: 'users#show',as: :profile
   get '/users/new',to: redirect('/kaydol')
   resources :users,except: :index
-  get '/kaydol',to: 'users#new',as: :register
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

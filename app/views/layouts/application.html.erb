@@ -14,15 +14,26 @@
   <body>
 
         <div class="contain-to-grid">
-          <nav class="top-bar">
+          <nav class="top-bar" data-topbar>
             <ul class="title-area">
               <h2><a href="">Arduino Smart Home</a></h2>
             </ul>
             <section class="top-bar-section">
               <ul class="right">
+                <% if signed_in? %>
+                   <li class="has-dropdown">
+                     <a href="#"><%= current_user.first_name %></a>
+                     <ul class="dropdown">
+                       <li><%= link_to "Profili Görüntüle",profile_path(current_user)  %></li>
+                       <li><%= link_to "Oturum Kapat",logout_path,method: :delete  %></li>
+                     </ul>
+
+                   </li>
+                    <% else %>
                 <li class="divider"></li>
-                <li><a href="">Oturum Aç</a></li>
+                <li><%= link_to "Oturum Aç",login_path,method: :get  %></li>
                 <li class="divider"></li>
+                    <% end %>
               </ul>
             </section>
           </nav>
