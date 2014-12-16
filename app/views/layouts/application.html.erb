@@ -26,6 +26,7 @@
                      <a href="#"><%= current_user.first_name %></a>
                      <ul class="dropdown">
                        <li><%= link_to "Profili Görüntüle",profile_path(current_user)  %></li>
+                       <li><%= link_to "Akıllı Ev",home_path  %></li>
                        <li><%= link_to "Yeni Kayıt",register_path  %></li>
                        <li><%= link_to "Oturum Kapat",logout_path,method: :delete  %></li>
 

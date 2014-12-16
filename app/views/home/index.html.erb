@@ -1,1 +1,44 @@
-<h1>AKILLI EV TASLAK</h1>
+<div class="contain-to-grids">
+  <div class="row">
+    <div class="large-12 columns">
+      <h1>Akıllı Ev Kontrol</h1>
+    </div><hr>
+    <div class="row">
+      <div class="large-7 columns">
+        <%= image_tag 'arduino_ev_taslak.jpg' %>
+      </div>
+      <div class="large-5 columns">
+       <h1>PANEL</h1><hr>
+        <div class="row">
+          <div class="large-12 columns">
+            <table>
+              <% i=0;j=0; rooms=["Salon","Yatak Odası","Mutfak","Banyo","Balkon"];
+                 sensors=["Işık","Oda","Durum","Ekstra Durum"]%>
+            <% while j<5 %>
+              <th><%= sensors[j] %></th>
+                  <% j=j+1 %>
+                  <% end %>
+            <% while i<5 %>
+                  <tr>
+                    <td>
+                      <div class="switch round large">
+                        <input id='<%= "exampleRadioSwitch#{i}" %>' type="checkbox" name="testGroup">
+                        <label for='<%= "exampleRadioSwitch#{i}" %>'></label>
+                        </div>
+                    </td>
+                    <td>
+                      <%= rooms[i] %>
+                    </td>
+                    <td>25 <sup>o</sup>C</td>
+                    <td>X</td>
+                  </tr>
+                  <% i=i+1 %>
+              <% end %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+</div>
+
