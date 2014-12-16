@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'home/index',to: redirect('/ev')
+  get '/ev',to: 'home#index', as: :home
+ 
+
   get '/about/index',to: redirect('/hakkinda')
   get 'welcome/index'
   get '/hakkinda',to: 'about#index',as: :about
