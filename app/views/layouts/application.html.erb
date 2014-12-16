@@ -21,14 +21,20 @@
             <section class="top-bar-section">
               <ul class="right">
                 <% if signed_in? %>
+                    <li class="divider"></li>
                    <li class="has-dropdown">
                      <a href="#"><%= current_user.first_name %></a>
                      <ul class="dropdown">
                        <li><%= link_to "Profili Görüntüle",profile_path(current_user)  %></li>
+                       <li><%= link_to "Yeni Kayıt",register_path  %></li>
                        <li><%= link_to "Oturum Kapat",logout_path,method: :delete  %></li>
+
                      </ul>
 
                    </li>
+                    <li class="divider"></li>
+                    <li><%= link_to "Hakkında",login_path,method: :get  %></li>
+                    <li class="divider"></li>
                     <% else %>
                 <li class="divider"></li>
                 <li><%= link_to "Oturum Aç",login_path,method: :get  %></li>
