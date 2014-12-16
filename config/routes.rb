@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'about/index'
 
+  get '/about/index',to: redirect('/hakkinda')
   get 'welcome/index'
-
+  get '/hakkinda',to: 'about#index',as: :about
   get '/kaydol',to: 'users#new',as: :register
   resource :session,only: [:new,:create,:destroy]
   get '/oturum_ac',to:'sessions#new',as: :login
