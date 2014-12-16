@@ -15,7 +15,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user=User.find(params[:id])
+    @user=User.find(session[:user_id])
+  rescue
+    redirect_to login_path
+
   end
 
 private
