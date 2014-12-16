@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   get '/kaydol',to: 'users#new',as: :register
   resource :session,only: [:new,:create,:destroy]
   get '/oturum_ac',to:'sessions#new',as: :login
@@ -6,6 +8,7 @@ Rails.application.routes.draw do
   get '/:id', to: 'users#show',as: :profile
   get '/users/new',to: redirect('/kaydol')
   resources :users,except: :index
+  root 'welcome#index', as: :root
 
 
   # The priority is based upon order of creation: first created -> highest priority.
