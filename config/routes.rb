@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'about/index'
+
   get 'welcome/index'
 
   get '/kaydol',to: 'users#new',as: :register
